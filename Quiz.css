@@ -1,0 +1,151 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body - center everything vertically and horizontally */
+body, html {
+  height: 100%;
+  background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Main quiz container */
+#quiz-container {
+  background-color: #fff;
+  width: 450px;
+  max-width: 95vw;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Question style */
+#Question {
+  font-size: 26px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 25px;
+   min-height: 80px;
+  max-height: 100px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   padding: 0 10px;
+}
+
+/* Answer buttons container */
+#Answer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+/* Each option button */
+.option {
+  flex: 1 1 45%;
+  min-width: 140px;
+  background-color: #f0f0f0;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  padding: 15px 20px;
+  font-size: 16px;
+  color: #444;
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.15s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  user-select: none;
+}
+
+/* Hover and focus effect for buttons */
+.option:hover,
+.option:focus {
+  background-color: #4a90e2;
+  border-color: #2a64c7;
+  color: #fff;
+  transform: translateY(-3px);
+  outline: none;
+}
+
+/* Real answer display */
+#realans {
+  font-size: 18px;
+  font-style: italic;
+  color: #777;
+  background-color: #f9f9f9;
+  padding: 12px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  min-height: 40px;
+  user-select: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Buttons container for Next and Show Answer */
+#quiz-container > button {
+  background-color: #4a90e2;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  margin: 0 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 6px 12px rgba(74, 144, 226, 0.4);
+  user-select: none;
+}
+
+#quiz-container > button:hover:not(:disabled) {
+  background-color: #2a64c7;
+}
+
+#quiz-container > button:disabled {
+  background-color: #bbb;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Final score styling */
+#final-score {
+  margin-top: 25px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1b5e20;
+  background-color: #a5d6a7;
+  padding: 20px 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(27, 94, 32, 0.3);
+  user-select: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  #quiz-container {
+    width: 100%;
+    padding: 25px 20px;
+  }
+
+  .option {
+    flex-basis: 100%;
+    min-width: unset;
+  }
+
+  #quiz-container > button {
+    margin: 10px 5px;
+    width: 120px;
+  }
+}
